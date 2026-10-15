@@ -84,6 +84,7 @@ a.tx { color: #4f7cf7; text-decoration: none; font-size: 11px; }
         <h2><span class="bar green"></span>净流向统计</h2>
         <div class="tabs">
           <div class="tab active" data-p="n24">24h</div>
+          <div class="tab" data-p="n3">3天</div>
           <div class="tab" data-p="n7">7天</div>
           <div class="tab" data-p="n30">30天</div>
           <div class="tab" data-p="n60">60天</div>
@@ -99,6 +100,18 @@ a.tx { color: #4f7cf7; text-decoration: none; font-size: 11px; }
             <div class="half">
               <h2><span class="bar green"></span>24h 净转入 TOP 20</h2>
               <div id="net-in24" class="empty">加载中…</div>
+            </div>
+          </div>
+        </div>
+        <div id="panel-n3" class="panel">
+          <div class="duo">
+            <div class="half">
+              <h2><span class="bar pink"></span>近 3 天净转出 TOP 20</h2>
+              <div id="net-out3" class="empty">加载中…</div>
+            </div>
+            <div class="half">
+              <h2><span class="bar green"></span>近 3 天净转入 TOP 20</h2>
+              <div id="net-in3" class="empty">加载中…</div>
             </div>
           </div>
         </div>
@@ -192,6 +205,8 @@ function load(){
     renderBoard($('board-in'), d.daily.in, false);
     renderNet($('net-out24'), d.daily.net_out, 'neg');
     renderNet($('net-in24'), d.daily.net_in, 'pos');
+    renderNet($('net-out3'), d.m3.net_out, 'neg');
+    renderNet($('net-in3'), d.m3.net_in, 'pos');
     renderNet($('net-out7'), d.week.net_out, 'neg');
     renderNet($('net-in7'), d.week.net_in, 'pos');
     renderNet($('net-out30'), d.m30.net_out, 'neg');
